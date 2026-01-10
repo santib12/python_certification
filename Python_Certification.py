@@ -186,4 +186,92 @@ print(my_str[1:4])
  
 # Note that the stop index is non_inclusive
 
+# python list data type is a ordered sequence of elements that can be composed of strings, numbers or even other list 
+# Example
+
+cities = ['Los Angeles', 'London', 'Tokyo']
+# Accessing elemnts in a list: you can refrence its index number in the sequence 
+cities = ['Los Angeles', 'London', 'Tokyo']
+cities[0]
+
+# accessing elements using negative indexing you can use -1 as the index number for last element
+
+cities = ['Los Angeles', 'London', 'Tokyo']
+cities[-1]
+
+# Creating list using list() constructor, the list() constructor is used to convert an iterable into a list 
+developer = 'Jessica'
+print(list(developer))
+
+# Finding the length of a list you can use len() function to get the length of the list
+numbers = [1,2,3,4,5]
+len(numbers)
+
+# List Mutability meaning you can update any element in the list as long as you pass in a valid index number 
+programming_languages = ['Python', 'Java', 'C++', 'Rust']
+programming_languages[0] = 'JavaScript'
+print(programming_languages) # ['JavaScript', 'Java', 'C++', 'Rust']
+
+#Index Out of Range Error: If you pass in an index (either positive or negative) that is out of bounds for the list, 
+# then you will receive an IndexError:
+programming_languages = ['Python', 'Java', 'C++', 'Rust']
+programming_languages[10] = 'JavaScript'
+
+"""
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list assignment index out of range
+"""
+
+# Removing elements from a list: Elements can be removed from a list using del 
+developer = ['Jane Doe', 23, 'Python Developer']
+del developer[1]
+print(developer) # ['Jane Doe', 'Python Developer']
+
+# Checking if an Element Exists in a List: The in keyword can be used to check if an element exists in a list:
+programming_languages = ['Python', 'Java', 'C++', 'Rust']
+
+'Rust' in programming_languages # True
+'JavaScript' in programming_languages # False
+
+# Nesting list inside other list
+developer = ['Alice', 25, ['Python', 'Rust', 'C++']]
+
+# To access the nested list, you will need to access it using index 2 since lists are zero-based indexed.
+developer = ['Alice', 25, ['Python', 'Rust', 'C++']]
+developer[2] # ['Python', 'Rust', 'C++']
+
+# To further acess the second language from that nested list you will need to acess it using index 1:
+developer = ['Alice', 25, ['Python', 'Rust', 'C++']]
+developer[2][1] # Rust
+
+#Unpacking values from a list is a technique used to assign values from a list to new variables.
+# Here is an example to unpack the developer list into new variables called name, age and job like this:#
+developer = ['Alice', 34, 'Rust Developer']
+name, age, job = developer
+
+#Collecting Remaining Items From a List: To collect any remaining elements from a list, you can use the asterisk (*) operator like this:
+developer = ['Alice', 34, 'Rust Developer']
+name, *rest = developer
+
+#If the number of variables on the left side of the assignment operator doesn't match the total number of items in the list, then you will receive a ValueError.
+# Slicing Lists: Slicing is the concept of accessing a portion of a list by using the slice operator :. To slice a list that starts at index 1 and ends at index 3, you can use the following syntax:
+desserts = ['Cake', 'Cookies', 'Ice Cream', 'Pie']
+desserts[1:3] # ['Cookies', 'Ice Cream']
+
+# Step Intervals: It is also possible to specify a step interval which determines how much to increment between the indices.
+numbers = [1, 2, 3, 4, 5, 6]
+numbers[1::2] # [2, 4, 6]
+
+# append(): Used to add an item to the end of the list. Here is an example of using the append() method to add the number 6 to this numbers list:
+numbers = [1, 2, 3, 4, 5]
+numbers.append(6)
+print(numbers) # [1, 2, 3, 4, 5, 6]
+
+#Appending lists: The append() method can also be used to add one list at the end of another:
+numbers = [1, 2, 3, 4, 5]
+even_numbers = [6, 8, 10]
+
+numbers.append(even_numbers)
+print(numbers) # [1, 2, 3, 4, 5, [6, 8, 10]]
 
